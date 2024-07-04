@@ -113,6 +113,7 @@ function reset() {
 
 tasksList.addEventListener('click', deleteTask);
 tasksList.addEventListener('click', doneTask);
+tasksList.addEventListener('click', editTask)
 
 function deleteTask(event){
     if(event.target.dataset.action !== 'delete'){
@@ -150,6 +151,12 @@ function openEditWindow() {
 }
 
 
+function editTask(event){
+    if(event.target.dataset.action === 'edit'){
+        openEditWindow()
+        const parentNode = event.target.closest('.list-group-item')
+    }
+}
 
 function doneTask(event) {
     if(event.target.dataset.action === 'done'){
